@@ -43,5 +43,4 @@ function recommendPizza(data) {
     recommendationDiv.innerHTML = recommendation;
 }
 
-// Call the function to get weather data on page load
 getWeather();
