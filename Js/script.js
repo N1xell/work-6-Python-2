@@ -1,12 +1,12 @@
-// API Key and base URL
-const apiKey = 'your_api_key';  // Вставте свій API-ключ
-const city = 'Kyiv';            // Місто, для якого відображатимемо погоду
+
+const apiKey = 'your_api_key';  
+const city = 'Kyiv';            
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 const weatherDiv = document.getElementById('weather');
 const recommendationDiv = document.getElementById('pizza-recommendation');
 
-// Function to fetch weather data
+
 async function getWeather() {
     try {
         const response = await fetch(apiUrl);
@@ -19,7 +19,6 @@ async function getWeather() {
     }
 }
 
-// Function to display weather data
 function displayWeather(data) {
     const { main, weather, name } = data;
     const temperature = main.temp;
@@ -27,7 +26,6 @@ function displayWeather(data) {
     weatherDiv.innerHTML = `Current weather in ${name}: ${temperature}°C, ${weatherDescription}`;
 }
 
-// Function to recommend pizza based on weather
 function recommendPizza(data) {
     const temperature = data.main.temp;
     let recommendation = '';
